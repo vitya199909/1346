@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "OS version" 
+cat /etc/os-release | grep PRETTY_NAME
+echo ""
+echo "Users with bash shell"
+grep '/bash' /etc/passwd | cut -d: -f1
+echo ""
+echo "Open ports"
+ss -tulnp | grep LISTEN
